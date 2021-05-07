@@ -7,7 +7,7 @@ async function subComment(event){
     event.preventDefault();
     
     const commentText = document.querySelector("#commentinput").value;
-    const response = await fetch(`${window.location.href}/comments`, {
+    const response = await fetch(`${window.location.origin}/comments`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
