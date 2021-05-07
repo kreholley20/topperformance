@@ -429,7 +429,7 @@ app.post("/posts/:postid/delete", (req, res) => {
 app.post("/posts/:commentID/deletecomment", (req, res) => {
     const deleteComment = commentModel.deleteComment(req.params.commentID);
     if (deleteComment){
-        res.redirect('back');
+        res.redirect('/back');
     } else if (req.session.isLoggedIn !== 1){
         res.redirect('/login');
     } else {
