@@ -3,19 +3,14 @@
 <head>
     <link rel="stylesheet" href="/css/tdee.css">
     <link rel="stylesheet" href="/css/navbar.css">
-    <script src="/js/tdee.js" defer></script>
+    <script src="/js/CalCountJS/tdee.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TDEE Calculator</title>
 </head>
 <body>
     <nav class="topbar">
-        <a href="/viewpost">Forum</a>
-        <a href="#trainer">My Trainer</a>
-        <a href="/index">Calorie Counter</a>
-        <a href= "/meallog">Meal Log</a>
-        <a href= "/tdee" class="active">Calculator</a>
-        <a href="/login">Log In</a>
+       <%- include ('navbar.ejs') %>
     </nav>
     
     <form id="tdeeForm" action="/counter" method="POST">

@@ -16,6 +16,14 @@ const {postTDEESchema} = require("./postTDEEValidator");
 const {postContentSchema} = require("./postContentValidator");
 const {postPostSchema} = require("./newPostValidator");
 const {postCommentSchema} = require("./postCommentValidator");
+const {getClients} = require("./getClientsValidator"); // used for both active and all clients
+const {getTrainers} = require("./getTrainerValidator");
+const {addClients} = require("./addClientsValidator");
+const {addTrainers} = require("./addTrainersValidator");
+const {deleteClients} = require("./deleteClientsValidator");
+const {deleteTrainers} = require("./deleteTrainersValidator");
+const {updateClients} = require("./updateClientsValidator");
+const {updateTrainers} = require("./updateTrainerValidator");
 
 const schemas = {
     postUsersSchema,
@@ -24,7 +32,15 @@ const schemas = {
     postTDEESchema,
     postContentSchema,
     postPostSchema,
-    postCommentSchema
+    postCommentSchema,
+    getClients,
+    getTrainers,
+    addClients,
+    addTrainers,
+    deleteClients,
+    deleteTrainers,
+    updateClients,
+    updateTrainers
 }
 
 exports.schemas = schemas;
