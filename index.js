@@ -54,6 +54,7 @@ const {postModel} = require("./Models/CalorieCounter/postModel");
 const {commentModel} = require("./Models/CalorieCounter/commentModel");
 const {client_model} = require("./Models/ClientTrainer/clientModel");
 const {trainer_model} = require("./Models/ClientTrainer/TrainerModel");
+const { get } = require("http");
 
 app.use(express.static(path.join(__dirname, "public"), {
     extensions: ['html'],
@@ -486,6 +487,7 @@ app.get("/posts/:postid", (req, res) =>{
         const currUsername = req.session.username;
         const isAdmin = req.session.role;
         if (getPost){
+
             res.render('showpost', {getPost, getComments, loggedIn, username, currUsername, isAdmin});
         } else {
             return res.sendStatus(500);
@@ -537,7 +539,7 @@ app.post("/posts/:postid/delete", (req, res) => {
 app.post("/posts/:commentID/deletecomment", (req, res) => {
     const deleteComment = commentModel.deleteComment(req.params.commentID);
     if (deleteComment){
-        res.redirect((req.get('referer')));
+        res.redirect('/viewposts');
     } else if (req.session.isLoggedIn !== 1){
         res.redirect('/login');
     } else {
