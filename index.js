@@ -114,7 +114,7 @@ app.post('/addition/AddClient', (req, res) => {
         console.log(error.details);
         return res.sendStatus(400);
     }
-    let is_active = req.body.is_active;
+    let is_active = value.is_active.toLowerCase();
 
     if (is_active == "yes"){
         is_active = 1;
@@ -123,7 +123,6 @@ app.post('/addition/AddClient', (req, res) => {
     } else {
         return res.send("Incomplete/invalid entry");
     }
-    console.log('is_active: ' + is_active);
 
     try {
         const insert = client_model.add_client({
