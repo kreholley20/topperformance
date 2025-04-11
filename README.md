@@ -48,7 +48,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/topperformance.git
+git clone https://github.com/kreholley20/topperformance.git
 cd topperformance
 Install dependencies:
 
